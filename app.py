@@ -14,9 +14,3 @@ def hello():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-```
-
-**2. `requirements.txt`** (Python dependencies):
-```
-flask==3.0.0
-gunicorn==21.2.0
