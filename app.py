@@ -1,0 +1,22 @@
+from flask import Flask, render_template
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/api/hello')
+def hello():
+    return {'message': 'Hello from Python!', 'status': 'success'}
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+```
+
+**2. `requirements.txt`** (Python dependencies):
+```
+flask==3.0.0
+gunicorn==21.2.0
